@@ -1,0 +1,113 @@
+body{
+  text-align: center;
+  background: #00ECB9;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+	color: #396;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 10px;
+}
+
+.settings {
+  width: 350px;
+  overflow: auto;
+  margin: 40px auto;
+  background: #00BF96;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+
+.display {
+  margin-top: 40px;
+}
+
+button {
+	display : inline-block;
+  cursor : pointer;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border-radius : 5px;
+  border: none;
+  font-size : 35px;
+  font-weight : 200;
+  color : white;
+  background-color: #00816A;
+}
+
+button:hover {
+  background: #00916A;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.chosen,
+.chosen:hover {
+	background-color: #00AAAA;
+}
+
+.start {
+  width: 245px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.play {
+  display: none;
+}
+
+.play, .pause {
+  width: 275px;
+}
+
+.pomodoro > div {
+	padding: 10px;
+  border-radius: 3px;
+  background: #00BF96;
+  display: inline-block;
+}
+
+.pomodoro div > span {
+	padding: 10px;
+  border-radius: 3px;
+  background: #00816A;
+  display: inline-block;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.caption {
+	padding-top: 5px;
+  font-size: 18px;
+}
+
+.pomodoro div > .adjust {
+  font-size: 52px;
+  padding: 0 8px;
+}
+
+.pomodoro div > .adjust:hover {
+  background: #00916A;
+}
+
+.error {
+  color: maroon;
+  font-weight: bold;
+  display: none;
+}
+
+.break {
+  display: none;
+}
+
+.relax {
+  background: seashell;
+}
