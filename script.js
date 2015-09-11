@@ -82,18 +82,14 @@ $(function() {
 			}
 		}
 		$pomoNum.text(pomoNum);
-		if (work) {
-			if (pomodoros > 0) {
-				pomodoros--;
-			} else {
+		if (!work) {
+			pomodoros--;
+		} else {
+			if (pomodoros === 0) {
 				pomodoros = 4;
 			}
-		} else {
-			if (pomodoros === 4) {
-				pomodoros--;
-			}
 		}
-		work = !work;	
+		work = !work;
 	};
 
 	var display = function() {
