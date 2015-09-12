@@ -60,12 +60,14 @@ h3 {
   letter-spacing: 1px;
 }
 
-.play {
+.play,
+.break,
+.mute {
   display: none;
 }
 
 .play, .pause {
-  width: 275px;
+  width: 262px;
 }
 
 .pomodoro > div {
@@ -101,10 +103,6 @@ h3 {
 .error {
   color: maroon;
   font-weight: bold;
-  display: none;
-}
-
-.break {
   display: none;
 }
 

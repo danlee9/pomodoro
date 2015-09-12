@@ -9,6 +9,9 @@ $(function() {
 
 	var work = true;
 	var pomodoros = 0;
+	var started = false;
+	var sound = true;
+	var $audio = $('audio')[0];
 
 	var $minutes = $('.minutes');
 	var $seconds = $('.seconds');
@@ -126,6 +129,9 @@ $(function() {
 
 	var nextTimer = function() {
 		setEndTime();
+		if (sound && started) {
+			$audio.play();
+		}
 		display();
 		countDown();
 		if (work) {
@@ -147,6 +153,7 @@ $(function() {
 			$error.hide();
 			$display.show();
 			$settings.hide();
+			started = true;
 		} else {
 			$error.show();
 		}
@@ -179,6 +186,7 @@ $(function() {
 		$settings.show();
 		showPause();
 		$body.removeClass('relax');
+		started = false;
 	});
 
 	$('.more').on('click', function() {
@@ -207,13 +215,27 @@ $(function() {
 
 	var $pause = $('.pause');
 	var $play = $('.play');
+	var $sound = $('.sound');
+	var $mute = $('.mute');
+
+	$sound.on('click', function() {
+		sound = false;
+		$sound.hide();
+		$mute.show();
+	});
+
+	$mute.on('click', function() {
+		sound = true;
+		$mute.hide();
+		$sound.show();
+	});
 
 	var showPause = function() {
 		if ( $pause.css('display') == 'none' ){
     	$play.hide();
 			$pause.show();
 		}
-	}
+	};
 
 	$pause.on('click', function() {
 		timeRemaining = getTimeRemaining(endTime);
