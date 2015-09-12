@@ -1,20 +1,44 @@
 $(function() {
+	//===============
+	// jQuery objects
+	//===============
 	var $display = $('.display');
-	$display.hide();
 	var $settings = $('.settings');
+	var $pause = $('.pause');
+	var $play = $('.play');
+	var $sound = $('.sound');
+	var $mute = $('.mute');
+	var $audio = $('audio')[0];
+	var $minutes = $('.minutes');
+	var $seconds = $('.seconds');
+	var $pomoNum = $('.pomo-num');
+	var $break = $('.break');
+	var $work = $('.work');
+	var $body = $('body');
+
+	//==========================
+	// initial variable settings
+	//==========================
+	var work = true; // indicates whether or not it is time to work or not
+	var pomodoros = 0; // number of pomodoros finished
+	var started = false; // option to indicate whether or not settings have been chosen
+	var sound = true; // option to enable sound
 	
+	//============================
+	// blank variable declarations
+	//============================
+	var endTime; // date number indicated end time
+	var timeRemaining; // will hold object about time reamiaing
+	var timeInterval; // variable to hold interval timer
+	var maxTime; // max amount of time for timer
+	var pomoNum; // indicates which pomodoro out of 4 is currently 
+
+	//============================
+	// settings options
+	//============================ 
 	var pomoLength = {},
 			shortBreak = {},
 			longBreak = {};
-
-	var work = true;
-	var pomodoros = 0;
-	var started = false;
-	var sound = true;
-	var $audio = $('audio')[0];
-
-	var $minutes = $('.minutes');
-	var $seconds = $('.seconds');
 
 	var setTime = function(html, variable) {
 		$(html).on('click', 'button', function() {
@@ -34,6 +58,9 @@ $(function() {
 	setTime('.short-break', shortBreak);
 	setTime('.long-break', longBreak);
 
+	//============================
+	// functions
+	//============================
 	var getTimeRemaining = function(endTime) {
 		var time = endTime - Date.now();
 		var seconds = Math.floor( (time/1000) % 60 );
@@ -44,14 +71,6 @@ $(function() {
 			minutes: ('0' + minutes).slice(-2)
 		};
 	};
-
-	var endTime;
-	var timeRemaining;
-	var timeInterval;
-	var maxTime;
-
-	var $pomoNum = $('.pomo-num');
-	var pomoNum;
 
 	var nextVariables = function() {
 		clearInterval(timeInterval);
@@ -95,6 +114,7 @@ $(function() {
 		work = !work;
 	};
 
+	// function to display time or start next timer
 	var display = function() {
 		timeRemaining = getTimeRemaining(endTime);
 		if (timeRemaining.time <= 1000) {
@@ -110,6 +130,7 @@ $(function() {
 		timeInterval = setInterval(display, 1000);
 	};
 
+	// sets end time
 	var setEndTime = function() {
 		if (work) {
 			maxTime = (pomoLength.num * 60 * 1000) + 5;			
@@ -121,12 +142,9 @@ $(function() {
 			}
 		}
 		endTime = maxTime + Date.now();
-	};
+	};	
 
-	var $break = $('.break');
-	var $work = $('.work');
-	var $body = $('body');
-
+	// starts next timer
 	var nextTimer = function() {
 		setEndTime();
 		if (sound && started) {
@@ -145,7 +163,18 @@ $(function() {
 		}
 	}
 
+	// function to show pause button
+	var showPause = function() {
+		if ( $pause.css('display') == 'none' ){
+    	$play.hide();
+			$pause.show();
+		}
+	};
 
+
+	//============================
+	// event handlers for buttons
+	//============================
 	$('.start').on('click', function() {
 		var $error = $('.error');
 		if (pomoLength.num && shortBreak.num && longBreak.num) {
@@ -213,30 +242,6 @@ $(function() {
 		showPause();
 	});
 
-	var $pause = $('.pause');
-	var $play = $('.play');
-	var $sound = $('.sound');
-	var $mute = $('.mute');
-
-	$sound.on('click', function() {
-		sound = false;
-		$sound.hide();
-		$mute.show();
-	});
-
-	$mute.on('click', function() {
-		sound = true;
-		$mute.hide();
-		$sound.show();
-	});
-
-	var showPause = function() {
-		if ( $pause.css('display') == 'none' ){
-    	$play.hide();
-			$pause.show();
-		}
-	};
-
 	$pause.on('click', function() {
 		timeRemaining = getTimeRemaining(endTime);
 		clearInterval(timeInterval);
@@ -248,8 +253,19 @@ $(function() {
 		endTime = Date.now() + timeRemaining.time;
 		display();
 		countDown();
-		$play.hide();
-		$pause.show();
+		showPause();
+	});
+
+	$sound.on('click', function() {
+		sound = false;
+		$sound.hide();
+		$mute.show();
+	});
+
+	$mute.on('click', function() {
+		sound = true;
+		$mute.hide();
+		$sound.show();
 	});
 
 });

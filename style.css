@@ -12,6 +12,30 @@ h1 {
   margin: 40px 0px 10px;
 }
 
+h3 {
+  font-size: 16px;
+  margin: 0;
+  margin-top: 5px;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 35px;
+  font-weight: 200;
+  color: white;
+  background-color: #00816A;
+}
+
+button:hover {
+  background: #00916A;
+}
+
 .settings {
   width: 350px;
   overflow: auto;
@@ -21,37 +45,9 @@ h1 {
   border-radius: 10px;
 }
 
-.display {
-  margin-top: 40px;
-}
-
-button {
-	display : inline-block;
-  cursor : pointer;
-  width: 70px;
-  height: 70px;
-  margin: 10px;
-  border-radius : 5px;
-  border: none;
-  font-size : 35px;
-  font-weight : 200;
-  color : white;
-  background-color: #00816A;
-}
-
-button:hover {
-  background: #00916A;
-}
-
-h3 {
-  font-size: 16px;
-  margin: 0;
-  margin-top: 5px;
-}
-
 .chosen,
 .chosen:hover {
-	background-color: #00AAAA;
+  background-color: #00AAAA;
 }
 
 .start {
@@ -60,14 +56,15 @@ h3 {
   letter-spacing: 1px;
 }
 
-.play,
-.break,
-.mute {
+.error {
+  color: maroon;
+  font-weight: bold;
   display: none;
 }
 
-.play, .pause {
-  width: 262px;
+.display {
+  margin-top: 40px;
+  display: none;
 }
 
 .pomodoro > div {
@@ -100,10 +97,14 @@ h3 {
   background: #00916A;
 }
 
-.error {
-  color: maroon;
-  font-weight: bold;
+.play,
+.break,
+.mute {
   display: none;
+}
+
+.play, .pause {
+  width: 262px;
 }
 
 .relax {
