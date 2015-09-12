@@ -109,17 +109,15 @@ $(function() {
 
 	var setEndTime = function() {
 		if (work) {
-			maxTime = (pomoLength.num * 60 * 1000) + 5;
-			endTime = maxTime + Date.now();
+			maxTime = (pomoLength.num * 60 * 1000) + 5;			
 		} else {
 			if (pomodoros < 4) {
 				maxTime = (shortBreak.num * 60 * 1000) + 5;
-				endTime = maxTime + Date.now();
 			} else {
 				maxTime = (longBreak.num * 60 * 1000) + 5;
-				endTime = maxTime + Date.now();
 			}
 		}
+		endTime = maxTime + Date.now();
 	};
 
 	var $break = $('.break');
@@ -180,6 +178,7 @@ $(function() {
 		$display.hide();
 		$settings.show();
 		showPause();
+		$body.removeClass('relax');
 	});
 
 	$('.more').on('click', function() {
