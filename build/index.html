@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Pomodoro</title>
+
+	<link rel="stylesheet" href="css/combined.css"/>
+	
+	<script src="js/combined.js"></script>
+
+</head>
+<body>
+	<h1>Pomodoro</h1>
+
+	<div class="settings">
+		<h2>Settings</h2>
+		<div class="pomodoro-length">
+			<h3>Pomodoro Length</h3>
+			<button class="option"><span>20</span></button>
+			<button class="option"><span>25</span></button>
+			<button class="option"><span>30</span></button>
+		</div>
+		<div class="short-break">
+			<h3>Short Break</h3>
+			<button class="option"><span>3</span></button>
+			<button class="option"><span>5</span></button>
+			<button class="option"><span>7</span></button>
+		</div>
+		<div class="long-break">
+			<h3>Long Break</h3>
+			<button class="option"><span>15</span></button>
+			<button class="option"><span>20</span></button>
+			<button class="option"><span>25</span></button>
+		</div>
+		<button class="start">Start</button>
+		<div class="error">
+			<p>Missing inputs!</p>
+		</div>
+	</div> 
+
+	<div class="display">
+		<div class="pomodoro">
+			<div>
+				<span class="more adjust"><i class="fa fa-plus"></i></span>
+				<div class="caption">More</div>
+			</div>
+			<div>
+				<span class="minutes"></span>
+				<div class="caption">Minutes</div>
+			</div>
+			<div>
+				<span class="seconds"></span>
+				<div class="caption">Seconds</div>
+			</div>
+			<div>
+				<span class="less adjust"><i class="fa fa-minus"></i></span>
+				<div class="caption">Less</div>
+			</div>
+		</div>
+		
+		<div class="buttons">
+			<button class="reset"><span><i class="fa fa-refresh"></i></span></button>
+			<button class="prev"><span><i class="fa fa-step-backward"></i></span></button>
+			<button class="next"><span><i class="fa fa-step-forward"></i></span></button>
+			<button class="change-settings"><span><i class="fa fa-eject"></i></span></button>
+		</div>
+		<button class="pause"><span><i class="fa fa-pause"></i></span></button>
+		<button class="play"><span><i class="fa fa-play"></i></span></button>
+		<button class="sound"><span><i class="fa fa-bell-o"></i></span></button>
+		<button class="mute"><span><i class="fa fa-bell-slash-o"></i></span></button>
+
+		<div class="text">
+			<h2 class="work">Work Work!</h2>
+			<h2 class="break">Take a Break!</h2>
+			<h3>Pomodoro <span class="pomo-num">1</span>/4</h3>
+		</div>
+	</div>
+
+	<audio>
+		<p>Your browser does not support the <code>audio</code> element.</p>
+		<source src="alarm.wav" type="audio/wav">
+	</audio>
+
+</body>
+</html>
