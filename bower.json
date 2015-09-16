@@ -1,0 +1,10 @@
+{
+  "name": "pomodoro",
+  "version": "0.0.0",
+  "homepage": "https://github.com/danlee9/pomodoro",
+  "license": "MIT",
+  "dependencies": {
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4"
+  }
+}
