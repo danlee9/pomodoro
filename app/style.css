@@ -26,10 +26,14 @@ button {
   margin: 10px;
   border-radius: 5px;
   border: none;
-  font-size: 35px;
+  font-size: 0;
   font-weight: 200;
   color: white;
   background-color: #00816A;
+}
+
+button span {
+  font-size: 35px;
 }
 
 button:hover {
