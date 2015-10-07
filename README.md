@@ -23,7 +23,7 @@ Using Simple Pomodoro:
 	  -Pomodoro Length (20, 25, or 30 mins)
 	  -Short Break (3, 5, or 7 mins)
 	  -Long Break (15, 20, or 25 mins)
-2. Press start to being timer (Won't start until options for each setting are chosen)
+2. Press start to begin timer (Won't start until options for each setting are chosen)
 3. Next, previous, and pause/play buttons will adjust timers accordingly
 4. Reset button will start over current timer
 5. Plus and minus buttons will add or subtract 1 min from current time
