@@ -11,7 +11,7 @@ Basic Principles:
 
 ```
 1. Work on task in consistent "pomodoro" intervals set to 20 to 30 minutes
-2. Take a short break around 5 minutes after each pomodoro
+2. Take a short break of around 5 minutes after each pomodoro
 3. After Four Pomodoros take a longer break from 15 to 25 minutes
 4. Repeat until task is finished
 ```
